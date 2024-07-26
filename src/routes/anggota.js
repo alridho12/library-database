@@ -5,6 +5,6 @@ const { protect, validatePetugas } = require('../middleware/auth')
 
 router
 .post('/addanggota',protect,validatePetugas, anggotaController.addAnggota)
-.get('/', anggotaController.getAllAnggota)
+.get('/',protect, anggotaController.getAllAnggota)
 
 module.exports = router

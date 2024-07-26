@@ -5,6 +5,6 @@ const { protect, validateAdmin } = require('../middleware/auth')
 
 router
 .post('/addbuku',protect,validateAdmin, bukuController.addBuku)
-.get('/', bukuController.getAllBuku)
+.get('/',protect, bukuController.getAllBuku)
 
 module.exports = router

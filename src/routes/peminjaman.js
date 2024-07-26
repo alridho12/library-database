@@ -5,6 +5,6 @@ const { protect, validatePetugas } = require('../middleware/auth')
 
 router
 .post('/addpeminjaman',protect,validatePetugas, peminjamanController.addPeminjaman)
-.get('/', peminjamanController.getAllPeminjaman)
+.get('/',protect, peminjamanController.getAllPeminjaman)
 
 module.exports = router

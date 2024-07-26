@@ -5,6 +5,6 @@ const { protect, validatePetugas } = require('../middleware/auth')
 
 router
 .post('/addpengembalian',protect,validatePetugas, pengembalianController.addPengembalian)
-.get('/', pengembalianController.getAllPengembalian)
+.get('/',protect, pengembalianController.getAllPengembalian)
 
 module.exports = router
